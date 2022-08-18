@@ -1,10 +1,11 @@
 import React from "react";
 import { GoogleOutlined } from "@ant-design/icons";
+import { auth } from "../services/firebase";
 import firebase from "firebase/compat/app";
-import { auth } from "../firebase";
+
 function Login(props) {
   const googleRedirect = () => {
-    auth.signInWithRedirect(new auth.GoogleAuthProvider());
+    auth.signInWithRedirect(new firebase.auth.GoogleAuthProvider());
   };
   return (
     <div id="login-page">
